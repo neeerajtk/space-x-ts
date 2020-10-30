@@ -11,22 +11,22 @@ import {
 } from '@elastic/eui';
 
 const Header = () => {
-  const [position, setPosition] = useState('static');
-
+    const position = "static";
+//   const [position, setPosition]= useState<String>('static');
+ 
   const sections = [
     {
       items: [<EuiHeaderLogo>Elastic</EuiHeaderLogo>],
-      borders: 'right',
     },
   ];
 
   return (
     <>
-      <EuiSwitch
+      {/* <EuiSwitch
         label={'Make header fixed position'}
         checked={position === 'fixed'}
         onChange={(e) => setPosition(e.target.checked ? 'fixed' : 'static')}
-      />
+      /> */}
       <EuiSpacer />
       <EuiHeader position={position} sections={sections} />
     </>

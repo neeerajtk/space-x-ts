@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom';
+import '../styles/Header.css';
 // import '@elastic/eui/dist/eui_theme_dark.css';
 import '@elastic/eui/dist/eui_theme_light.css'
 import React, { useState } from 'react';

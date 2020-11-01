@@ -18,7 +18,11 @@ const cardFooterContent = (
   </EuiFlexGroup>
 );
 
-export default () => (
+interface Props {
+  spaceItem: Array<string>;
+}
+
+const Card:React.FC<Props> = ({spaceItem}) => (
   <EuiFlexGroup gutterSize="l">
     <EuiFlexItem>
       <EuiCard
@@ -57,3 +61,5 @@ export default () => (
     </EuiFlexItem>
   </EuiFlexGroup>
 );
+
+export default Card;

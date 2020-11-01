@@ -8,7 +8,7 @@ import Card from './Card';
 
 
 function Body() {
-    const [data, setData] = useState("");
+    const [data, setData] = useState([]);
 
     const getApiDetails = useEffect(()=>{
             const result =  Axios.get('https://api.spacexdata.com/v3/launches')
@@ -30,16 +30,16 @@ function Body() {
 
     return (
         <div className="space-date">
-            if (data !== []) {
+         {
                 data.map((item) => (
-                    <Card key={uuidv4()} spaceItem={item}/>    
+                    <Card spaceItem={item}/>    
                 )
                 )
             }
-                
+        
         </div>
-    )
-
+        )
+        
     }
 export default Body;
 

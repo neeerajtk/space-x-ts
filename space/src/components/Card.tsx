@@ -7,7 +7,7 @@ import {
   EuiCard,
   EuiFlexGroup,
   EuiFlexItem,
-  EuiIcon,
+  
 } from '@elastic/eui';
 
 const cardFooterContent = (
@@ -31,7 +31,7 @@ const Card:React.FC<Props> = ({spaceItem}:any) => (
         image={
           <div>
             <img
-              src="https://source.unsplash.com/400x200/?Nature"
+              src={spaceItem.links.mission_patch_small}
               alt="Nature"
             />
           </div>
@@ -39,7 +39,8 @@ const Card:React.FC<Props> = ({spaceItem}:any) => (
         title={spaceItem.mission_name}
         // title={spaceItem.flight_number} '.' {spaceItem.mission_name}
         // description="Example of a card's description. Stick to one or two sentences."
-        description={spaceItem.details}
+        description={ `[${spaceItem.launch_date_utc.slice(0,10)} , ${spaceItem.launch_date_utc.slice(11,16)}] 
+        ${spaceItem.details}`}
         footer={cardFooterContent}
       />
     </EuiFlexItem>

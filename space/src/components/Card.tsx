@@ -19,10 +19,10 @@ const cardFooterContent = (
 );
 
 interface Props {
-  spaceItem: [];
+  spaceItem: Array<any>;
 }
 
-const Card:React.FC<Props> = ({spaceItem}) => (
+const Card:React.FC<Props> = ({spaceItem}:any) => (
   // <EuiFlexGroup gutterSize="l">
   // <>
     <EuiFlexItem>
@@ -36,9 +36,9 @@ const Card:React.FC<Props> = ({spaceItem}) => (
             />
           </div>
         }
-        title="hi"
-        title={spaceItem.flight_number} '.' {spaceItem.mission_name}
-        description="Example of a card's description. Stick to one or two sentences."
+        title={spaceItem.mission_name}
+        // title={spaceItem.flight_number} '.' {spaceItem.mission_name}
+        // description="Example of a card's description. Stick to one or two sentences."
         description={spaceItem.details}
         footer={cardFooterContent}
       />

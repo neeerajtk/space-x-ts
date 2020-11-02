@@ -23,7 +23,8 @@ interface Props {
 }
 
 const Card:React.FC<Props> = ({spaceItem}) => (
-  <EuiFlexGroup gutterSize="l">
+  // <EuiFlexGroup gutterSize="l">
+  // <>
     <EuiFlexItem>
       <EuiCard
         textAlign="left"
@@ -40,7 +41,8 @@ const Card:React.FC<Props> = ({spaceItem}) => (
         footer={cardFooterContent}
       />
     </EuiFlexItem>
-    <EuiFlexItem>
+);
+    {/* <EuiFlexItem>
       <EuiCard
         textAlign="left"
         image="https://source.unsplash.com/400x200/?Water"
@@ -58,8 +60,9 @@ const Card:React.FC<Props> = ({spaceItem}) => (
         title={'Beats in the City'}
         description="This card has an href and should be a link."
       />
-    </EuiFlexItem>
-  </EuiFlexGroup>
-);
+    </EuiFlexItem> */}
+    {/* </> */}
+  {/* // </EuiFlexGroup> */}
+
 
 export default Card;

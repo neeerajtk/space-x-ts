@@ -1,0 +1,12 @@
+.euiFlexGroup {
+    display: flex;
+    order: 3;
+    flex-wrap: wrap ;
+    /* height: 100px;
+    width: 300px; */
+}
+
+.euiFlexItem {
+    /* height: 300px;
+    width: 300px; */
+}

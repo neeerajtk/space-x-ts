@@ -17,7 +17,7 @@ const Header = () => {
  
   const sections = [
     {
-      items: [<EuiHeaderLogo>Elastic</EuiHeaderLogo>],
+      items: [<EuiHeaderLogo>SPACEX</EuiHeaderLogo>],
     },
   ];
 

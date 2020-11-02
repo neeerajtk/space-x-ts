@@ -1,6 +1,12 @@
 
-import React, {useState,useEffect} from 'react'
+import React, {useState,useEffect} from 'react';
+import '../styles/Body.css';
 import { v4 as uuidv4 } from 'uuid';
+import {
+   
+    EuiFlexGroup
+  
+  } from '@elastic/eui';
 import Axios from 'axios';
 import Card from './Card';
 
@@ -31,15 +37,19 @@ function Body() {
     return (
         <div className="space-date">
          {
-                data.map((item) => (
+                <EuiFlexGroup gutterSize="l">
+
+                {data.map((item) => (
                     <Card spaceItem={item}/>    
+             )
                 )
-                )
+        }
+                </EuiFlexGroup>
             }
         
         </div>
-        )
+    )}
         
-    }
+    
 export default Body;
 

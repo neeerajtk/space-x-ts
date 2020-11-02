@@ -1,5 +1,5 @@
 import React from 'react';
-import '@elastic/eui/dist/eui_theme_light.css'
+import '@elastic/eui/dist/eui_theme_light.css';
 
 
 import {
@@ -9,6 +9,7 @@ import {
   EuiFlexItem,
   
 } from '@elastic/eui';
+import ItemModal from './ItemModal';
 
 const cardFooterContent = (
   <EuiFlexGroup justifyContent="flexEnd">
@@ -41,7 +42,7 @@ const Card:React.FC<Props> = ({spaceItem}:any) => (
         // description="Example of a card's description. Stick to one or two sentences."
         description={ `[${spaceItem.launch_date_utc.slice(0,10)} , ${spaceItem.launch_date_utc.slice(11,16)}] 
         ${spaceItem.details}`}
-        footer={cardFooterContent}
+        footer={cardFooterContent} onClick={ItemModal}
       />
     </EuiFlexItem>
 );

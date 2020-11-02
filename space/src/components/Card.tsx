@@ -13,13 +13,13 @@ import {
 const cardFooterContent = (
   <EuiFlexGroup justifyContent="flexEnd">
     <EuiFlexItem grow={false}>
-      <EuiButton>Go for it</EuiButton>
+      <EuiButton>View More Details</EuiButton>
     </EuiFlexItem>
   </EuiFlexGroup>
 );
 
 interface Props {
-  spaceItem: Array<string>;
+  spaceItem: [];
 }
 
 const Card:React.FC<Props> = ({spaceItem}) => (
@@ -36,8 +36,10 @@ const Card:React.FC<Props> = ({spaceItem}) => (
             />
           </div>
         }
-        title="Elastic in Nature"
+        title="hi"
+        title={spaceItem.flight_number} '.' {spaceItem.mission_name}
         description="Example of a card's description. Stick to one or two sentences."
+        description={spaceItem.details}
         footer={cardFooterContent}
       />
     </EuiFlexItem>

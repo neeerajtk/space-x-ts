@@ -10,28 +10,33 @@ import {
 import Axios from 'axios';
 import Card from './Card';
 
-
-
+type launchData = {
+    links : any; //object
+    mission_name: string;
+    launch_date_utc: string;
+    details: string;
+}
 
 function Body() {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<Array<launchData>>([]);
 
-    const getApiDetails = useEffect(()=>{
-            const result =  Axios.get('https://api.spacexdata.com/v3/launches')
-            .then(result=>{
-                console.log('Inside getdata');
-                setData(result.data);
-                console.log(result);            
-            })
-            .catch(error => {
-                console.log(error);
-            })
-            
-            
-        },[])
-    
-    
-    
+   useEffect(()=>{
+       async function getLaunches() {
+           let res = await Axios.get('https://api.spacexdata.com/v3/launches');
+           let result:launchData = {
+               links: res.data.links,
+               mission_name: res.data.mission_name,
+               launch_date_utc: res.data.launch_date_utc,
+               details:res.data.details
+           }; 
+           setData(data.concat(result));
+           console.log("DATA IS ::: ");
+           console.log(data);
+           
+           
+       }
+       getLaunches();
+   },[])
     
 
     return (

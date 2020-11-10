@@ -36,7 +36,7 @@ function Body() {
            
        }
        getLaunches();
-   },[])
+   })
     
 
     return (

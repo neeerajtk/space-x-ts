@@ -20,7 +20,7 @@ const cardFooterContent = (
 );
 
 interface Props {
-  spaceItem: any;
+  spaceItem: ;
 }
 
 const Card:React.FC<Props> = ({spaceItem}:any) => (

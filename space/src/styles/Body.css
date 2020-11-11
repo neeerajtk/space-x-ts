@@ -1,10 +1,14 @@
 .euiFlexGroup {
-        display: flex;
-        flex-wrap: wrap;
-        margin:10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
 }
 
 .euiFlexItem {
-    /* height: 300px;  */
-    width: 270px; 
+  /* height: 300px;  */
+  width: 270px;
 }
+
+/* .page-buttons {
+  display: inline;
+} */

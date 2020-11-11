@@ -19,11 +19,6 @@ const Header = () => {
 
   return (
     <>
-      {/* <EuiSwitch
-        label={'Make header fixed position'}
-        checked={position === 'fixed'}
-        onChange={(e) => setPosition(e.target.checked ? 'fixed' : 'static')}
-      /> */}
       <EuiSpacer />
       <Link to="/">
         <EuiHeader position={position} sections={sections} />

@@ -35,23 +35,27 @@ function Body() {
     getLaunchData();
   }, []);
 
+  function handleClick() {
+    setHigh(high + 4);
+  }
+
   return (
     <>
       <div className="space-date">
         {
           <EuiFlexGroup gutterSize="l">
-            {newData.map((item) => (
+            {data.slice(0, high).map((item) => (
               <Card spaceItem={item} />
             ))}
           </EuiFlexGroup>
         }
       </div>
-      <div className="page-buttons">
-        <EuiFlexItem grow={false}>
-          <EuiButton href="http://www.elastic.co">Next Page</EuiButton>
-        </EuiFlexItem>
-        <EuiFlexItem grow={false}>
-          <EuiButton href="http://www.elastic.co">Previous Page</EuiButton>
+      <div>
+        {/* <EuiFlexItem grow={false}>
+          <EuiButton onClick={handleClick()}>Previous Page</EuiButton>
+        </EuiFlexItem> */}
+        <EuiFlexItem>
+          <EuiButton onClick={handleClick}>Load More</EuiButton>
         </EuiFlexItem>
       </div>
     </>

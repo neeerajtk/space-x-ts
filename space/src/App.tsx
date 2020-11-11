@@ -1,14 +1,26 @@
-import React from 'react';
-import DemoHeader from './components/DemoHeader';
-import Card from './components/Card';
-import Header from './components/Header';
-import Body from './components/Body';
+import React from "react";
+import DemoHeader from "./components/DemoHeader";
+import Card from "./components/Card";
+import Header from "./components/Header";
+import Body from "./components/Body";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import Details from "./components/Details";
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Body/>
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Body />
+          </Route>
+          <Route exact path="/details/:id">
+            <Details />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

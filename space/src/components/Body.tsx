@@ -9,34 +9,31 @@ import {
   } from '@elastic/eui';
 import Axios from 'axios';
 import Card from './Card';
+import {launchData} from '../types/launchDataTypes';
 
-type launchData = {
-    links : any; //object
-    mission_name: string;
-    launch_date_utc: string;
-    details: string;
-}
 
 function Body() {
     const [data, setData] = useState<Array<launchData>>([]);
 
    useEffect(()=>{
-       async function getLaunches() {
-           let res = await Axios.get('https://api.spacexdata.com/v3/launches');
-           let result:launchData = {
-               links: res.data.links,
-               mission_name: res.data.mission_name,
-               launch_date_utc: res.data.launch_date_utc,
-               details:res.data.details
-           }; 
-           setData(data.concat(result));
-           console.log("DATA IS ::: ");
-           console.log(data);
-           
-           
-       }
-       getLaunches();
-   })
+        async function getLaunchData(){
+            let res =await Axios.get("https://api.spacexdata.com/v3/launches");
+            let resultData:launchData[] = res.data.map((item:any)=>{
+               return  {
+                   mission_patch_small : item.links.mission_patch_small,
+                   mission_name: item.mission_name,
+                   launch_date_utc: item.launch_date_utc,
+                   details: item.details,
+                   flight_number:item.flight_number,
+                   links: item.links
+            }
+            }
+            ) 
+            setData(data.concat(resultData))
+
+        }
+        getLaunchData();
+   },[])
     
 
     return (

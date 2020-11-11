@@ -50,7 +50,7 @@ function Body() {
           </EuiFlexGroup>
         }
       </div>
-      <div>
+      <div className="load_button">
         {/* <EuiFlexItem grow={false}>
           <EuiButton onClick={handleClick()}>Previous Page</EuiButton>
         </EuiFlexItem> */}

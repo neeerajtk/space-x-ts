@@ -3,17 +3,13 @@ import "../styles/Details.css";
 import { launchData } from "../types/launchDataTypes";
 import Axios from "axios";
 
-import { useLocation, useParams } from "react-router-dom";
-// interface Props {
-//     match?:any
-// }
+import { useParams } from "react-router-dom";
 
 function Details() {
   const match = useParams<{ id: string }>();
   console.log("match");
   console.log(match);
 
-  //   const [data, setData] = useState<Array<launchData>>([]);
   const [data, setData] = useState<launchData | null>(null);
 
   useEffect(() => {
@@ -40,14 +36,9 @@ function Details() {
       setData(singleResult);
     }
     getSingleData();
-    //   setData(data.concat(singleResult));
     console.log("Data is");
     console.log(data);
-
-    //   setData(data.concat(singleResult));
   }, []);
-
-  // console.log(props.item);
 
   return (
     <>
@@ -90,42 +81,6 @@ function Details() {
         </div>
       )}
     </>
-    // <>
-    //   {data.map((item) => {
-    //     <div className="details">
-    //       <div className="box">
-    //         <img src={item.mission_patch_small} />
-
-    //         <h1>{item.mission_name}</h1>
-    //         <h6>
-    //           {item.launch_date_utc.slice(0, 10)} ,{" "}
-    //           {item.launch_date_utc.slice(11, 16)}
-    //         </h6>
-    //         <p>
-    //           <span>Site Name : </span>
-    //           {item.launch_site.site_name}
-    //         </p>
-    //         <p>
-    //           <span>Mission Name :</span> {item.mission_name}
-    //         </p>
-    //         <p>
-    //           <span>Rocket Type : </span>
-    //           {item.rocket.rocket_type}
-    //         </p>
-    //         {item.details ? (
-    //           <p>
-    //             <span>Mission Details : </span>
-    //             {item.details.slice(0, 200)}
-    //           </p>
-    //         ) : (
-    //           <p>
-    //             <span>Mission Details : No Details </span>{" "}
-    //           </p>
-    //         )}
-    //       </div>
-    //     </div>;
-    //   })}
-    // </>
   );
 }
 

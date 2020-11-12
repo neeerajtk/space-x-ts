@@ -12,10 +12,17 @@ function Body() {
   const [low, setLow] = useState<number>(0);
   const [high, setHigh] = useState<number>(4);
 
+  function handleClick() {
+    // setLow(low + 4);
+    console.log("click handle");
+    // setLow(low + 4);
+    setHigh(high + 4);
+  }
+
   useEffect(() => {
     async function getLaunchData() {
       let res = await Axios.get(
-        `https://api.spacexdata.com/v3/launches?limit=${high}&offset=0 `
+        `https://api.spacexdata.com/v3/launches?limit=4&offset=${high} `
       );
       let resultData: launchData[] = res.data.map((item: any) => {
         return {
@@ -33,14 +40,6 @@ function Body() {
     }
     getLaunchData();
   }, [high]);
-
-  function handleClick() {
-    // setLow(low + 4);
-    console.log("click handle");
-
-    setHigh(high + 4);
-    console.log(high);
-  }
 
   return (
     <>

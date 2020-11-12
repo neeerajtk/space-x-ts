@@ -5,15 +5,9 @@
 }
 
 .euiFlexItem {
-  /* height: 300px;  */
   width: 270px;
 }
-/* 
-.body-data {
-  padding: 0px 30px 30px 30px;
-  margin-left: 10px;
-  position: relative;
-} */
+
 .euiButton {
   align-items: center;
   align-self: center;

@@ -1,15 +1,12 @@
-import ReactDOM from "react-dom";
+import React from "react";
 import "../styles/Header.css";
-// import '@elastic/eui/dist/eui_theme_dark.css';
 import "@elastic/eui/dist/eui_theme_light.css";
-import React, { useState } from "react";
 
-import { EuiHeader, EuiHeaderLogo, EuiSwitch, EuiSpacer } from "@elastic/eui";
+import { EuiHeader, EuiHeaderLogo, EuiSpacer } from "@elastic/eui";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const position = "static";
-  //   const [position, setPosition]= useState<String>('static');
 
   const sections = [
     {

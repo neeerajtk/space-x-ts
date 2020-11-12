@@ -13,13 +13,8 @@ function Details() {
   const [data, setData] = useState<launchData | null>(null);
 
   useEffect(() => {
-    console.log("INSIDE USE EFFECT");
-
     async function getSingleData() {
       let search_id = match.id;
-      console.log("search id");
-      console.log(search_id);
-
       let res = await Axios.get(
         `https://api.spacexdata.com/v3/launches/${search_id}`
       );
@@ -36,8 +31,6 @@ function Details() {
       setData(singleResult);
     }
     getSingleData();
-    console.log("Data is");
-    console.log(data);
   }, []);
 
   return (

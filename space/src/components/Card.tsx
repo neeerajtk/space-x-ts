@@ -2,7 +2,7 @@ import React from "react";
 import "@elastic/eui/dist/eui_theme_light.css";
 import { EuiButton, EuiCard, EuiFlexGroup, EuiFlexItem } from "@elastic/eui";
 import { launchData } from "../types/launchDataTypes";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface Props {
   spaceItem: launchData;

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Body.css";
-import { v4 as uuidv4 } from "uuid";
 import { EuiFlexGroup, EuiFlexItem, EuiButton } from "@elastic/eui";
 import Axios from "axios";
 import Card from "./Card";
@@ -8,14 +7,9 @@ import { launchData } from "../types/launchDataTypes";
 
 function Body() {
   const [data, setData] = useState<Array<launchData>>([]);
-  const [newData, setNewData] = useState<Array<launchData>>([]);
-  const [low, setLow] = useState<number>(0);
-  const [high, setHigh] = useState<number>(4);
+  const [high, setHigh] = useState<number>(0);
 
   function handleClick() {
-    // setLow(low + 4);
-    console.log("click handle");
-    // setLow(low + 4);
     setHigh(high + 4);
   }
 
@@ -35,8 +29,6 @@ function Body() {
         };
       });
       setData(data.concat(resultData));
-      console.log("DATA IS:::");
-      console.log(resultData);
     }
     getLaunchData();
   }, [high]);
@@ -47,15 +39,12 @@ function Body() {
         {
           <EuiFlexGroup gutterSize="l">
             {data.map((item) => (
-              <Card spaceItem={item} />
+              <Card spaceItem={item} key={item.flight_number} />
             ))}
           </EuiFlexGroup>
         }
       </div>
       <div className="load_button">
-        {/* <EuiFlexItem grow={false}>
-          <EuiButton onClick={handleClick()}>Previous Page</EuiButton>
-        </EuiFlexItem> */}
         <EuiFlexItem>
           <EuiButton onClick={handleClick}>Load More</EuiButton>
         </EuiFlexItem>

@@ -13,7 +13,6 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Body />
-            {/* <Footer /> */}
           </Route>
           <Route exact path="/details/:id">
             <Details />

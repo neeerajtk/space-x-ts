@@ -32,7 +32,7 @@ function Details() {
       setData(singleResult);
     }
     getSingleData();
-  }, []);
+  }, [match]);
 
   return (
     <>

@@ -28,7 +28,8 @@ function Body() {
           links: item.links,
         };
       });
-      setData(data.concat(resultData));
+      // setData(data.concat(resultData));
+      setData((prevData) => prevData.concat(resultData));
     }
     getLaunchData();
   }, [high]);

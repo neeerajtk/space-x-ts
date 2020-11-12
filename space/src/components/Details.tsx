@@ -28,6 +28,7 @@ function Details() {
         launch_site: res.data.launch_site,
         rocket: res.data.rocket,
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       setData(singleResult);
     }
     getSingleData();
@@ -38,7 +39,7 @@ function Details() {
       {data ? (
         <div className="details">
           <div className="box">
-            <img src={data.mission_patch_small} />
+            <img src={data.mission_patch_small} alt="Rocket" />
 
             <h1>{data.mission_name}</h1>
             <h6>

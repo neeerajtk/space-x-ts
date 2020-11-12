@@ -14,7 +14,9 @@ function Body() {
 
   useEffect(() => {
     async function getLaunchData() {
-      let res = await Axios.get("https://api.spacexdata.com/v3/launches");
+      let res = await Axios.get(
+        `https://api.spacexdata.com/v3/launches?limit=${high}&offset=0 `
+      );
       let resultData: launchData[] = res.data.map((item: any) => {
         return {
           mission_patch_small: item.links.mission_patch_small,
@@ -28,15 +30,16 @@ function Body() {
       setData(data.concat(resultData));
       console.log("DATA IS:::");
       console.log(resultData);
-      setNewData(data.slice(0, 4));
-      console.log("New data: ");
-      console.log(newData);
     }
     getLaunchData();
-  }, []);
+  }, [high]);
 
   function handleClick() {
+    // setLow(low + 4);
+    console.log("click handle");
+
     setHigh(high + 4);
+    console.log(high);
   }
 
   return (
@@ -44,7 +47,7 @@ function Body() {
       <div className="space-date">
         {
           <EuiFlexGroup gutterSize="l">
-            {data.slice(0, high).map((item) => (
+            {data.map((item) => (
               <Card spaceItem={item} />
             ))}
           </EuiFlexGroup>
